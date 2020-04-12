@@ -1,16 +1,28 @@
-# wananandroidflutter
+# 晚安Android
 
-wanandroid Flutter App实现版本
+Wanandroid Flutter App实现版本
 
-## Getting Started
+## 项目说明
 
-This project is a starting point for a Flutter application.
+~~~~
+├── README.md           # 项目介绍
+├── android             # Android
+├── assets
+│   ├── fonts           # 字体文件
+│   ├── images          # 图片
+│   └── jsons           # json文件
+├── ios                 # iOS
+├── lib
+│   ├── api             # 接口管理
+│   ├── common          # 一些工具类，如通用方法类、网络接口类、保存全局变量的静态类等
+│   ├── i18n            # 本地化文件
+│   ├── main.dart       # 入口文件
+│   ├── models          # 接口对应的Dart Model类会在此目录下
+│   ├── routes          # 存放所有路由页面类
+│   ├── states          # 保存APP中需要跨组件共享的状态类
+│   ├── utils           # APP内工具类
+│   └── widgets         # APP内封装的一些Widget组件都在该目录下
+├── pubspec.yaml        # Flutter依赖管理
+├── test                # 测试文件      
+~~~~
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
