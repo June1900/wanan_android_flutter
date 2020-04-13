@@ -16,8 +16,11 @@ class Api {
   static final String AVATAR_GITHUB = "https://github.com/identicons/";
   static final String AVATAR_CODING = "https://coding.net/static/fruit_avatar/Fruit-";
   static final String AVATAR_LEGO = "https://randomuser.me/api/portraits/lego/";
-  static final String LOGIN = BASE_URL + "user/login";
-  static final String REGISTER = BASE_URL + "user/register";
+  //  登录
+  static final String LOGIN =  "user/login";
+  //  注册
+  static final String REGISTER = "user/register";
+
   static final String COLLECTED_ARTICLE = BASE_URL + "lg/collect/list/";
   static final String COLLECT_IN_ARTICLE = BASE_URL + "lg/collect/";
   static final String COLLECT_OUT_ARTICLE = BASE_URL + "lg/collect/add/json";

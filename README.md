@@ -22,6 +22,7 @@ Wanandroid Flutter App实现版本
 │   ├── states          # 保存APP中需要跨组件共享的状态类
 │   ├── utils           # APP内工具类
 │   └── widgets         # APP内封装的一些Widget组件都在该目录下
+│   └── views           # APP界面
 ├── pubspec.yaml        # Flutter依赖管理
 ├── test                # 测试文件      
 ~~~~

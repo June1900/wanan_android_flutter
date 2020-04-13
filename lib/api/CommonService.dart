@@ -31,16 +31,31 @@ class CommonService {
 
     // 在调试模式下需要抓包调试，所以我们使用代理，并禁用HTTPS证书校验
     if (!Global.isRelease) {
-      (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-          (client) {
-        client.findProxy = (uri) {
-          return "PROXY 10.1.10.250:8888";
-        };
+      (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (client) {
+//        client.findProxy = (uri) {
+//          return "PROXY 10.1.10.250:8888";
+//        };
         //代理工具会提供一个抓包的自签名证书，会通不过证书校验，所以我们禁用证书校验
-        client.badCertificateCallback =
-            (X509Certificate cert, String host, int port) => true;
+        client.badCertificateCallback = (X509Certificate cert, String host, int port) => true;
       };
     }
+  }
+
+  Future<Response> login(String username, String password) async {
+    FormData formData = new FormData.fromMap({
+      "username": "$username",
+      "password": "$password",
+    });
+    return await Dio().post(Api.LOGIN, data: formData);
+  }
+
+  Future<Response> register(String username, String password) async {
+    FormData formData = new FormData.fromMap({
+      "username": "$username",
+      "password": "$password",
+      "repassword": "$password",
+    });
+    return await Dio().post(Api.REGISTER, data: formData);
   }
 
   // 登录接口，登录成功后返回用户信息
