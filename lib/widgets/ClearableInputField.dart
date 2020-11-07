@@ -18,20 +18,21 @@ class ClearableInputField extends StatefulWidget {
   final Color fillColor;
   final bool showPrefixIcon;
 
-  ClearableInputField(
-      {this.onchange,
-      this.hintTxt,
-      this.autoFocus = true,
-      this.onSubmit,
-      this.textStyle,
-      this.hintStyle,
-      this.border,
-      this.fillColor,
-      this.controller,
-      this.inputType,
-      this.padding,
-      this.showPrefixIcon = false,
-      this.obscureText = false});
+  ClearableInputField({
+    this.onchange,
+    this.hintTxt,
+    this.autoFocus = true,
+    this.onSubmit,
+    this.textStyle,
+    this.hintStyle,
+    this.border,
+    this.fillColor,
+    this.controller,
+    this.inputType,
+    this.padding,
+    this.showPrefixIcon = false,
+    this.obscureText = false,
+  });
 
   @override
   State<StatefulWidget> createState() => new _ClearableInputFieldState();
@@ -55,21 +56,22 @@ class _ClearableInputFieldState extends State<ClearableInputField> {
       onChanged: onTextChanged,
       onSubmitted: onSubmit,
       decoration: InputDecoration(
-          contentPadding: (null == widget.padding) ? EdgeInsets.all(0.0) : widget.padding,
-          hintText: widget.hintTxt,
-          hintStyle: widget.hintStyle,
-          fillColor: widget.fillColor,
-          filled: null != widget.fillColor,
-          border: widget.border,
-          labelText: widget.hintTxt,
-          labelStyle: widget.hintStyle,
-          errorBorder: widget.border,
-          focusedBorder: widget.border,
-          enabledBorder: widget.border,
-          disabledBorder: widget.border,
-          focusedErrorBorder: widget.border,
-          suffixIcon: _buildDefaultClearIcon(context, _controller),
-          prefixIcon: widget.showPrefixIcon ? (_buildDefaultPrefixIcon()) : null),
+        contentPadding: (null == widget.padding) ? EdgeInsets.all(0.0) : widget.padding,
+        hintText: widget.hintTxt,
+        hintStyle: widget.hintStyle,
+        fillColor: widget.fillColor,
+        filled: null != widget.fillColor,
+        border: widget.border,
+        labelText: widget.hintTxt,
+        labelStyle: widget.hintStyle,
+        errorBorder: widget.border,
+        focusedBorder: widget.border,
+        enabledBorder: widget.border,
+        disabledBorder: widget.border,
+        focusedErrorBorder: widget.border,
+        suffixIcon: _buildDefaultClearIcon(context, _controller),
+        prefixIcon: widget.showPrefixIcon ? (_buildDefaultPrefixIcon()) : null,
+      ),
     );
   }
 
